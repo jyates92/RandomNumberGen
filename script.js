@@ -14,24 +14,24 @@ function writePassword() {
   console.log();
 }
 
-if ((parseInt(passwordLength) >= 8) && (parseInt(passwordLength) <= 128)) {
-  return passwordLength
-} else {
-  askLength()
-}
+// if ((parseInt(passwordLength) >= 8) && (parseInt(passwordLength) <= 128)) {
+//   // return passwordLength;
+// } else {
+//   askLength()
+// }
 
 function askLength() {
   let passwordLength = prompt("How many characters would you like your password to contain? Must be between 8-128.");
 
   if (Number.isInteger(passwordLength)) {
     console.log(passwordLength);
-    // if ((passwordLength >= 8) && (passwordLength <= 128)) {
-    //   return passwordLength;
+    if ((passwordLength >= 8) && (passwordLength <= 128)) {
+      return passwordLength;
     }    
-  // } else {
-  //   alert("Please enter a valid length!")
-  //   askLength();
-  // }
+  } else {
+    alert("Please enter a valid length!")
+    askLength();
+  }
 }
 
   function generatePassword() {
